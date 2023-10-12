@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bkpd1e7vxhiiu"]
+
+[ext_resource type="Shader" path="res://Effects/Main_Menu.gdshader" id="1_dfvcu"]
+
+[resource]
+shader = ExtResource("1_dfvcu")
+shader_parameter/OCTAVE = 6
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 1.0
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.1, 0.44, 0.76, 1)
+shader_parameter/WATER2_COL = Color(0.09, 0.39, 0.67, 1)
+shader_parameter/FOAM_COL = Color(0.13, 0.55, 0.9, 1)

@@ -95,7 +95,7 @@ offset_left = -200.0
 offset_top = 20.0
 offset_right = 200.0
 offset_bottom = 45.0
-color = Color(0.203922, 0.227451, 0.25098, 1)
+color = Color(0.313726, 0.0352941, 0.486275, 1)
 
 [node name="Fever" type="ProgressBar" parent="."]
 material = SubResource("ShaderMaterial_qgwam")

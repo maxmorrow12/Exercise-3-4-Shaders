@@ -8,9 +8,9 @@ uniform float tide = 0.1;
 uniform float foamthickness = 0.1;
 uniform float timescale = 1.0;
 uniform float waterdeep = 0.3;
-uniform vec4 WATER_COL : source_color =  vec4(0.1, 0.44, 0.76, 1.0);
-uniform vec4 WATER2_COL : source_color =  vec4(0.09, 0.39, 0.67, 1.0);
-uniform vec4 FOAM_COL : source_color = vec4(0.13, 0.55, 0.9, 1.0);
+uniform vec4 WATER_COL : source_color =  vec4(.58,0, .82,1.0);
+uniform vec4 WATER2_COL : source_color =  vec4(236.09, 0.39, 0.67, 1.0);
+uniform vec4 FOAM_COL : source_color = vec4(255.13, 0.22, 0.9, 1.0);
 
 
 float rand(vec2 input){

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c76ip8vuk2pid"]
+[gd_scene load_steps=30 format=3 uid="uid://c76ip8vuk2pid"]
 
 [ext_resource type="Script" path="res://Brick/Brick_Container.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://d3o7nr1d2l1p" path="res://Paddle/Paddle.tscn" id="2"]
@@ -10,13 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://drxwrc1b5f0hw" path="res://UI/HUD.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://y45cm1yl1uhq" path="res://UI/Instructions.tscn" id="8"]
 [ext_resource type="Script" path="res://Effects/Camera.gd" id="9"]
-[ext_resource type="AudioStream" uid="uid://bmvhsdbyfyu8i" path="res://Assets/music.mp3" id="10"]
+[ext_resource type="AudioStream" uid="uid://bjib4i8gb77de" path="res://Assets/Synthsongv1.wav" id="10_lx4mf"]
 [ext_resource type="Script" path="res://Ball/Comet_Container.gd" id="11"]
-[ext_resource type="AudioStream" uid="uid://cpiuk3bgksubt" path="res://Assets/brick.wav" id="12"]
-[ext_resource type="AudioStream" uid="uid://ce8tv2pe58d5y" path="res://Assets/die.wav" id="13"]
-[ext_resource type="AudioStream" uid="uid://bj08dx14ujpmu" path="res://Assets/wall.wav" id="14"]
-[ext_resource type="AudioStream" uid="uid://dgamsv26k0qhc" path="res://Assets/paddle.wav" id="15"]
+[ext_resource type="AudioStream" uid="uid://bx61hf2ak752f" path="res://Assets/PaddleV1 .wav" id="11_70eoc"]
+[ext_resource type="FontFile" uid="uid://dgrra2ct7kdb5" path="res://Assets/LeagueGothic-Regular.ttf" id="12_8epps"]
+[ext_resource type="AudioStream" uid="uid://clsjbbqy3mqek" path="res://Assets/WallV1.wav" id="12_88dkw"]
+[ext_resource type="AudioStream" uid="uid://st3joq40cr2i" path="res://Assets/BrickV1.wav" id="13_2fk3m"]
+[ext_resource type="AudioStream" uid="uid://c2740v52iafyi" path="res://Assets/wilhelm.wav" id="14_16sdd"]
 [ext_resource type="Script" path="res://Effects/Fever.gd" id="16"]
+[ext_resource type="Texture2D" uid="uid://dhnv1c0bgo1pi" path="res://Assets/vapor 2.jpeg" id="19_pxkxd"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(200, 1000)
@@ -24,17 +26,146 @@ size = Vector2(200, 1000)
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(1224, 200)
 
+[sub_resource type="FontFile" id="FontFile_sd11c"]
+fallbacks = Array[Font]([ExtResource("12_8epps")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3lr8"]
+bg_color = Color(0.52549, 0.556863, 0.588235, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.0941176, 0.392157, 0.670588, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.454902, 0.752941, 0.988235, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.0941176, 0.392157, 0.670588, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.454902, 0.752941, 0.988235, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.0941176, 0.392157, 0.670588, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.133333, 0.545098, 0.901961, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.0941176, 0.392157, 0.670588, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.133333, 0.545098, 0.901961, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("12_8epps")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_2v2nm"]
+Button/colors/font_color_disabled = Color(0.286275, 0.313726, 0.341176, 1)
+Button/fonts/font = SubResource("FontFile_sd11c")
+Button/styles/disabled = SubResource("StyleBoxFlat_n3lr8")
+Button/styles/focus = SubResource("3")
+Button/styles/hover = SubResource("4")
+Button/styles/normal = SubResource("5")
+Button/styles/pressed = SubResource("6")
+Label/fonts/font = SubResource("7")
+
 [node name="Game" type="Node2D"]
 script = ExtResource("4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1382.0
+offset_top = 394.0
+offset_right = 2408.0
+offset_bottom = 1192.0
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1024.0
 offset_bottom = 800.0
 color = Color(0.333333, 0.333333, 0.333333, 1)
 script = ExtResource("2_brqjd")
-
-[node name="Comet_Container" type="Node2D" parent="."]
-script = ExtResource("11")
 
 [node name="Wall_Container" type="Node2D" parent="."]
 
@@ -46,6 +177,7 @@ offset_left = -190.0
 offset_top = -100.0
 offset_right = 10.0
 offset_bottom = 900.0
+color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Container/Wall_Left"]
 position = Vector2(-90, 400)
@@ -60,6 +192,7 @@ offset_left = -10.0
 offset_top = -100.0
 offset_right = 190.0
 offset_bottom = 900.0
+color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Container/Wall_Right"]
 position = Vector2(90, 400)
@@ -73,22 +206,11 @@ offset_left = -100.0
 offset_top = -190.0
 offset_right = 1124.0
 offset_bottom = 10.0
+color = Color(1, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Container/Wall_Top"]
 position = Vector2(512, -90)
 shape = SubResource("2")
-
-[node name="Brick_Container" type="Node2D" parent="."]
-process_mode = 3
-script = ExtResource("1")
-
-[node name="Paddle_Container" type="Node2D" parent="."]
-
-[node name="Paddle" parent="Paddle_Container" instance=ExtResource("2")]
-position = Vector2(462, 720)
-
-[node name="Ball_Container" type="Node2D" parent="."]
-script = ExtResource("3")
 
 [node name="Fever" type="Node2D" parent="."]
 script = ExtResource("16")
@@ -112,6 +234,7 @@ grow_vertical = 2
 process_mode = 3
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_2v2nm")
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -119,19 +242,43 @@ script = ExtResource("9")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
-stream = ExtResource("10")
+stream = ExtResource("10_lx4mf")
+volume_db = 2.651
 autoplay = true
 
 [node name="Paddle_Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15")
+stream = ExtResource("11_70eoc")
 
 [node name="Wall_Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14")
+stream = ExtResource("12_88dkw")
 
 [node name="Brick_Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12")
+stream = ExtResource("13_2fk3m")
+volume_db = -31.387
 
 [node name="Ball_Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13")
+stream = ExtResource("14_16sdd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1018.0
+offset_bottom = 801.0
+texture = ExtResource("19_pxkxd")
+
+[node name="Paddle_Container" type="Node2D" parent="."]
+
+[node name="Paddle" parent="Paddle_Container" instance=ExtResource("2")]
+position = Vector2(462, 720)
+
+[node name="Ball_Container" type="Node2D" parent="."]
+script = ExtResource("3")
+
+[node name="Brick_Container" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="Comet_Container" type="Node2D" parent="."]
+script = ExtResource("11")
 
 [connection signal="timeout" from="Fever/Timer" to="Fever" method="_on_Timer_timeout"]
